@@ -30,8 +30,9 @@
      <!-- Storm Dependency -->
      <dependency> 
        <groupId>storm</groupId>
-       <artifactId>storm-core</artifactId>
+       <artifactId>storm</artifactId>
        <version>0.9.0.1</version>
+       <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>junit</groupId>
@@ -108,6 +109,21 @@
           <compilerVersion>1.6</compilerVersion>
         </configuration>
       </plugin>
+      <plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-assembly-plugin</artifactId>
+			<configuration>
+				<archive>
+					<manifest>
+						<mainClass>realtime.filter.filter.CorreRecRealTimeFilterTopology</mainClass>
+					</manifest>
+				</archive>
+				<descriptorRefs>
+					<descriptorRef>jar-with-dependencies</descriptorRef>
+				</descriptorRefs>
+			</configuration>
+		</plugin>
 	 </plugins>
   </build>
+  
 </project>
